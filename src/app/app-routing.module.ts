@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page.component';
 import { LoginPageComponent } from './site-page/login-page/login-page.component';
 import { HomePageComponent } from './site-page/home-page/home-page.component';
+import { AuthenticationGuard } from './authentication.guard';
+import { AuthorizeGuard } from './authorize.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +13,10 @@ const routes: Routes = [
   },
   {
     path: 'admin',
+    data: {
+      roleName: 'admin',
+    },
+    canActivate: [AuthenticationGuard, AuthorizeGuard],
     loadChildren: () =>
       import('./admin-page/admin-page.module').then((m) => m.AdminPageModule),
   },

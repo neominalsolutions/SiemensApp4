@@ -27,6 +27,8 @@ export class LoginPageComponent implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    if (this.sub != undefined) {
+      this.sub.unsubscribe();
+    }
   }
 }

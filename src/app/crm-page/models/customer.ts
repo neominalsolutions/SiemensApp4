@@ -2,7 +2,7 @@ export interface Customer {
   firstName: string;
   lastName: string;
   address?: CustomerAddress;
-  credits: CustomerCredits[];
+  credits?: CustomerCredits[];
 }
 
 export interface CustomerAddress {

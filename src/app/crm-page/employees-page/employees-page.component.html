@@ -1,10 +1,41 @@
-<form [formGroup]="customerForm">
+<form [formGroup]="customerForm" (ngSubmit)="submitForm()">
 
   <label for="first-name">First Name: </label>
   <input id="first-name" type="text" formControlName="firstName">
+  <span [style.color]="'red'"
+    *ngIf="customerForm.get('firstName')?.hasError('required') && (customerForm.get('firstName')?.dirty || customerForm.get('firstName')?.touched)">
+    FirstName alanı boş geçilemez
+  </span>
 
+
+  <br>
   <label for="last-name">Last Name: </label>
   <input id="last-name" type="text" formControlName="lastName">
+
+  <!-- <label for="last-name">Value: </label>
+  <input id="last-name" type="text" formControlName="value">
+
+  <p>total: {{customerForm.get('total')?.value}}</p> -->
+
+  <span [style.color]="'red'" *ngIf="customerForm.get('lastName')?.hasError('maxlength')">
+    11 karakter sınırı var
+  </span>
+
+  <span [style.color]="'red'" *ngIf="customerForm.get('lastName')?.hasError('passwordStrength')">
+    Parolanız güvenli değil
+  </span>
+
+  <!-- form içinde başka bir form group ile nasıl çalışırız -->
+  <div formGroupName="address">
+    <input formControlName="street" placeholder="street" />
+    <br>
+    <input formControlName="city" placeholder="city" />
+    <br>
+    <input formControlName="state" placeholder="state" />
+    <br>
+    <input formControlName="zip" placeholder="zip" />
+    <br>
+  </div>
 
   <p>Complete the form to enable button.</p>
   <button type="submit" [disabled]="customerForm.invalid">Submit</button>

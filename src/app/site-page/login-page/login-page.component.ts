@@ -8,11 +8,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./login-page.component.scss'],
 })
 export class LoginPageComponent implements OnDestroy {
-
-  sub!:Subscription;
+  sub!: Subscription;
 
   constructor(private fb: FormBuilder, private loginService: LoginService) {}
-
 
   loginForm: FormGroup = this.fb.group({
     email: ['eve.holt@reqres.in'],
@@ -23,7 +21,9 @@ export class LoginPageComponent implements OnDestroy {
     const param = this.loginForm.value;
     const header = { lng: 'tr' };
 
-   this.sub= this.loginService.login(param, header).subscribe();
+    // debugger;
+
+    this.sub = this.loginService.login(param, header).subscribe();
   }
 
   ngOnDestroy(): void {

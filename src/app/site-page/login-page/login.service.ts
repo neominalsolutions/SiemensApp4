@@ -13,9 +13,11 @@ export class LoginService {
     return this.http
       .post('https://reqres.in/api/login', payload, { headers: headers })
       .pipe(
-        tap((response) => {
+        tap((response: any) => {
           console.log('response', response);
           // localstorage set işlemi.
+          localStorage.setItem('token', response.token);
+          window.location.href = '';
         })
       );
   }

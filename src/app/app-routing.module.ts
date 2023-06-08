@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page.component';
 import { LoginPageComponent } from './site-page/login-page/login-page.component';
+import { HomePageComponent } from './site-page/home-page/home-page.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomePageComponent,
+  },
   {
     path: 'admin',
     loadChildren: () =>

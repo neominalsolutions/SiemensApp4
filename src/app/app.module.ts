@@ -7,9 +7,10 @@ import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page
 import { LoginPageComponent } from './site-page/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HomePageComponent } from './site-page/home-page/home-page.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, LoginPageComponent],
+  declarations: [AppComponent, NotFoundPageComponent, LoginPageComponent, HomePageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

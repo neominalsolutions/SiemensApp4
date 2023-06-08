@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,15 @@ const routes: Routes = [
     path: 'crm',
     loadChildren: () =>
       import('./crm-page/crm-page.module').then((m) => m.CrmPageModule),
+  },
+  {
+    path: 'cms',
+    loadChildren: () =>
+      import('./cmspage/cmspage.module').then((m) => m.CMSPageModule),
+  },
+  {
+    path: '**', // her zaman bulunamayan sayfalar için path en allta tanımlanır.
+    component: NotFoundPageComponent,
   },
 ];
 

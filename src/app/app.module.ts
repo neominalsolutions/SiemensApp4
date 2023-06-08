@@ -6,10 +6,16 @@ import { AppComponent } from './app.component';
 import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page.component';
 import { LoginPageComponent } from './site-page/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NotFoundPageComponent, LoginPageComponent],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

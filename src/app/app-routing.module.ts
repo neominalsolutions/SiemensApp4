@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundPageComponent } from './site-page/not-found-page/not-found-page.component';
+import { LoginPageComponent } from './site-page/login-page/login-page.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
     path: 'cms',
     loadChildren: () =>
       import('./cmspage/cmspage.module').then((m) => m.CMSPageModule),
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent,
   },
   {
     path: '**', // her zaman bulunamayan sayfalar için path en allta tanımlanır.

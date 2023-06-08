@@ -9,9 +9,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './site-page/home-page/home-page.component';
 import { PermissionDirective } from './directives/permission.directive';
+import { DangerTextDirective } from './directives/danger-text.directive';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent, LoginPageComponent, HomePageComponent, PermissionDirective],
+  declarations: [
+    AppComponent,
+    NotFoundPageComponent,
+    LoginPageComponent,
+    HomePageComponent,
+    PermissionDirective,
+    DangerTextDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

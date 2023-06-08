@@ -1,3 +1,7 @@
-<h1>Anasayfa</h1>
+<h1 dangerText>Anasayfa</h1>
 
-<button (click)="gotoAdmin()">goto Admin</button>
+<button hasPermission="user-create" dangerText (click)="gotoAdmin()">goto Admin</button>
+
+<button hasPermission="role-create" (click)="gotoAdmin()">Role Create</button>
+<!-- 
+<button *ngIf="userInfo.permission.includes('role-create')" (click)="gotoAdmin()">Role Create</button> -->

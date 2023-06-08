@@ -9,6 +9,8 @@ export class HomePageComponent {
   // window.location.href => JS api tarayıcıda sayfa refresj işlemlerinde. Dikkat Client State localstorage da değilse silinir. BehaviorSubject
   // eğer ts den angular routing yaparak bir sayfaya yönlenmek için ise, router service kullanırız
 
+  // userInfo:any = localStorage.getItem("user-info");
+
   constructor(private router: Router) {}
 
   gotoAdmin() {

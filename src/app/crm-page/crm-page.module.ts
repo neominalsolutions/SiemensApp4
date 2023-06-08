@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CrmPageRoutingModule } from './crm-page-routing.module';
 import { EmployeesPageComponent } from './employees-page/employees-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { EmployeesPageComponent } from './employees-page/employees-page.componen
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     CrmPageRoutingModule
   ]
 })
